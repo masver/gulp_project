@@ -94,13 +94,14 @@ function watcher() {
     gulp.watch('src/assets/scss/**/*.scss', css)
     gulp.watch('src/assets/js/*.js', js)
     gulp.watch('src/assets/imgs/**/*', images)
+    gulp.watch('src/assets/imgs/fonts/*', fonts)
 }
 
 //команда запуска по умолчанию (gulp)
 gulp.task(
     'default',
     gulp.series(
-        gulp.parallel(html, css, js, images, vendorJS, vendorCSS),
+        gulp.parallel(html, css, js, images, vendorJS, vendorCSS, fonts),
         gulp.parallel(watcher, browsersync)
     )
 );
